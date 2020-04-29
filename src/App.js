@@ -47,8 +47,8 @@ class App extends React.Component {
         const numeric = (currentDisplayVal.match(/[1-9]+/))[0];
         this.setState({
           operator: clickedChar,
-          leftVal: this.state.isMinus ? '-'+ numeric : numeric,
-          displayVal: this.state.isMinus ? '-'+ numeric : '0',
+          leftVal: this.state.isMinus || this.addNegative ? '-'+ numeric : numeric,
+          displayVal: this.state.isMinus || this.addNegative ? '-'+ numeric : '0',
           isMinus: false,
         });
         return;
